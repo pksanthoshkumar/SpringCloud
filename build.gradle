@@ -1,32 +1,39 @@
 plugins {
-    id 'org.springframework.boot' version '3.2.0' // Use the latest version available
-    id 'io.spring.dependency-management' version '1.1.0'
-    id 'java'
+	id 'java'
+	id 'org.springframework.boot' version '3.2.9'
+	id 'io.spring.dependency-management' version '1.1.6'
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
-sourceCompatibility = '17' // or 21 if you're using JDK 21
+group = 'com.example.cloud'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
 
 repositories {
-    mavenCentral()
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2023.0.3")
 }
 
 dependencies {
-    // Spring Boot Starter for Eureka Server
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-
-    // Spring Boot Starter Web for building REST APIs
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 dependencyManagement {
-    imports {
-        // Import Spring Cloud dependencies for Eureka Server
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2022.0.4" // Adjust to latest BOM version
-    }
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
 
-test {
-    useJUnitPlatform()
+tasks.named('test') {
+	useJUnitPlatform()
 }
