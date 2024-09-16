@@ -1,6 +1,6 @@
 spring:
   application:
-    name: EUREKA-CLOUD-CLIENT
+    name: EUREKA-CLIENT-ACCOUNTS
 
 eureka:
   client:
