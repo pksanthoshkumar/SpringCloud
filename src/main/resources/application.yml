@@ -1,6 +1,6 @@
 spring:
   application:
-    name: EUREKA-CLIENT-ACCOUNTS
+    name: EUREKA-CLIENT-ADDRESS
   graphql:
     graphiql:
       enabled: true
