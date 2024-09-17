@@ -1,26 +1,13 @@
 type Query {
-        accounts: [Account]
+        address (clientId: String): [Address]
 }
 
-type Account {
+type Address {
         id: ID!
-        client: Client
-        currency: Currency
-        balance: Float
-        status: String!
+        street: String!
+        city: String!
+        state: String!
+        postalCode: String!
+        country: String!
 }
 
-type Client {
-    id: ID
-    clientId: String
-    firstName: String
-    lastName:String
-    middleName: String
-}
-
-
-enum Currency {
-    USD
-    CAD
-    SGD
-}
