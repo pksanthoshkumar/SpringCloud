@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: EUREKA-CLIENT-ADDRESS
@@ -9,7 +12,7 @@ spring:
 
 logging:
   level:
-    root: DEBUG
+    root: INFO
 
 eureka:
   client:
