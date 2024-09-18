@@ -2,9 +2,21 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+
 server:
-  port: 8761
+  port: 8083
 
 spring:
   application:
-    name: EUREKA-CLOUD-SERVER
+    name: SPRING-CLOUD-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id:  EUREKA-CLIENT-ADDRESS
+          uri:  http://localhost:8081/
+          predicates:
+            path: /address/graphql
+        - id:  EUREKA-CLIENT-ACCOUNTS
+          uri: http://localhost:8080/
+          predicates:
+            path: /accounts/graphql
