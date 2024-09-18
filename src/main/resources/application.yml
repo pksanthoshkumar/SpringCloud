@@ -1,8 +1,3 @@
-eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-
 server:
   port: 8083
 
@@ -12,11 +7,16 @@ spring:
   cloud:
     gateway:
       routes:
-        - id:  EUREKA-CLIENT-ADDRESS
-          uri:  http://localhost:8081/
+        - id: EUREKA-CLIENT-ADDRESS
+          uri: http://localhost:8081/
           predicates:
-            path: /address/graphql
-        - id:  EUREKA-CLIENT-ACCOUNTS
+            - Path=/address/graphql  # Correct the predicate format
+        - id: EUREKA-CLIENT-ACCOUNTS
           uri: http://localhost:8080/
           predicates:
-            path: /accounts/graphql
+            - Path=/accounts/graphql  # Correct the predicate format
+
+
+logging:
+  level:
+    root: INFO
