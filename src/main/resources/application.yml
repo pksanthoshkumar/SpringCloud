@@ -18,5 +18,7 @@ spring:
 
 
 logging:
+  file:
+    name: logs/spring-cloud-gateway.log
   level:
     root: INFO
