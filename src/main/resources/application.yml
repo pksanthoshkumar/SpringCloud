@@ -13,6 +13,6 @@ spring:
 
 logging:
   file:
-    name: logs/spring-cloud-gateway.log
+    name: logs/spring-cloud-Eureka.log
   level:
     root: INFO
