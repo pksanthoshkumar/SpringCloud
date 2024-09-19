@@ -8,3 +8,11 @@ server:
 spring:
   application:
     name: EUREKA-CLOUD-SERVER
+
+
+
+logging:
+  file:
+    name: logs/spring-cloud-gateway.log
+  level:
+    root: INFO
