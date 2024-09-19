@@ -12,8 +12,11 @@ spring:
 
 
 logging:
+  file:
+    name: logs/spring-cloud-address.log
   level:
     root: INFO
+
 
 eureka:
   client:
