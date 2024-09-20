@@ -1,0 +1,13 @@
+message: Hello, World!
+graphql:
+  queries:
+    address: |
+      query getAddress($clientId: String!) {
+        address(clientId: $clientId) {
+          street
+          city
+          state
+          postalCode
+          country
+        }
+      }
