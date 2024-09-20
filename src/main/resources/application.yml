@@ -7,11 +7,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: EUREKA-CLIENT-ADDRESS
+        - id: CLIENT-ADDRESS
           uri: http://localhost:8081/
           predicates:
             - Path=/address/graphql  # Correct the predicate format
-        - id: EUREKA-CLIENT-ACCOUNTS
+        - id: CLIENT-ACCOUNTS
           uri: http://localhost:8080/
           predicates:
             - Path=/accounts/graphql  # Correct the predicate format
