@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class SpringCloudApplication {
+public class SpringCloudAddressApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCloudApplication.class, args);
+		SpringApplication.run(SpringCloudAddressApplication.class, args);
 	}
 
 }
